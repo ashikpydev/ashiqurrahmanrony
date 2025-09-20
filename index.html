@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Ashiqur Rahman Rony, Research Data Analyst specializing in public health, machine learning, and data cleaning with tools like Stata, Python, and SurveyCTO.">
+    <meta name="keywords" content="Ashiqur Rahman Rony, Data Analyst, Public Health, Stata, Python, SurveyCTO, KoBoToolbox, ODK, ARISE Project">
+    <meta name="author" content="Ashiqur Rahman Rony">
+    <meta property="og:title" content="Ashiqur Rahman Rony - Portfolio">
+    <meta property="og:description" content="Explore the portfolio of Ashiqur Rahman Rony, a Research Data Analyst with expertise in public health and data analysis.">
+    <meta property="og:image" content="assets/img/Profile_pic.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
     <title>Ashiqur Rahman Rony - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-        .skill-tag {
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .skill-tag:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -29,10 +22,9 @@
                 <div class="text-xl font-bold gradient-text">Ashiqur Rahman Rony</div>
                 <div class="hidden md:flex space-x-6">
                     <a href="index.html" class="nav-link text-gray-700 link-hover font-medium text-base">About Me</a>
-                    <a href="research.html" class="nav-link text-gray-700 link-hover font-medium text-base">Research</a>
-                    <a href="teaching.html" class="nav-link text-gray-700 link-hover font-medium text-base">Teaching</a>
+                    <a href="experience.html" class="nav-link text-gray-700 link-hover font-medium text-base">Experience</a>
                     <a href="projects.html" class="nav-link text-gray-700 link-hover font-medium text-base">Projects</a>
-                    <a href="leadership.html" class="nav-link text-gray-700 link-hover font-medium text-base">Leadership</a>
+                    <a href="extracurricular.html" class="nav-link text-gray-700 link-hover font-medium text-base">Extracurricular Activities</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-gray-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,10 +34,9 @@
             </div>
             <div id="mobile-menu" class="hidden md:hidden pb-3">
                 <a href="index.html" class="block py-1 text-gray-600 hover:text-blue-600 text-base">About Me</a>
-                <a href="research.html" class="block py-1 text-gray-600 hover:text-blue-600 text-base">Research</a>
-                <a href="teaching.html" class="block py-1 text-gray-600 hover:text-blue-600 text-base">Teaching</a>
+                <a href="experience.html" class="block py-1 text-gray-600 hover:text-blue-600 text-base">Experience</a>
                 <a href="projects.html" class="block py-1 text-gray-600 hover:text-blue-600 text-base">Projects</a>
-                <a href="leadership.html" class="block py-1 text-gray-600 hover:text-blue-600 text-base">Leadership</a>
+                <a href="extracurricular.html" class="block py-1 text-gray-600 hover:text-blue-600 text-base">Extracurricular Activities</a>
             </div>
         </div>
     </nav>
@@ -54,54 +45,94 @@
     <section class="min-h-screen flex items-center bg-gray-50 pt-20 pb-6">
         <div class="max-w-7xl mx-auto px-4 w-full">
             <div class="flex flex-col md:flex-row items-stretch gap-6">
-                <!-- Left Side (30%) -->
-                <div class="w-full md:w-[30%] glass-effect p-6 rounded-xl shadow-lg flex flex-col justify-between">
-                    <div class="text-center space-y-4">
+                <!-- Left Side (35%) -->
+                <div class="w-full md:w-[35%] glass-effect p-10 rounded-xl shadow-lg flex flex-col justify-between left-panel">
+                    <div class="text-left space-y-5">
                         <div class="flex justify-center">
-                            <img src="assets\img\Profile_pic.jpg" alt="Ashiqur Rahman Rony" class="w-28 h-28 rounded-full shadow-lg border-4 border-blue-200">
+                            <img src="assets/img/Profile_pic.jpg" alt="Ashiqur Rahman Rony" class="w-40 h-40 rounded-lg shadow-lg border-4 border-blue-200 profile-img">
                         </div>
-                        <button id="downloadCV" class="w-full bg-teal-500 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded-md shadow transition transform hover:-translate-y-1">Download CV</button>
-
-
-                        <h3 class="text-lg font-semibold text-gray-800">Contact Info</h3>
-                        <div class="space-y-2 text-gray-600 text-sm">
-                            <p>📧 <a href="mailto:ashiqurrahman.stat@gmail.com" class="hover:text-blue-600">ashiqurrahman.stat@gmail.com</a></p>
+                        <p class="text-base text-gray-600 font-medium">Research Data Analyst | Public Health Enthusiast</p>
+                        <div class="flex justify-center">
+                            <a href="assets/files/Ashiqur_Rahman_Rony_CV.pdf" download>
+                                <button id="downloadCV" class="btn-primary max-w-xs">Download CV</button>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Contact Info</h3>
+                        <div class="space-y-3 text-gray-600 text-base">
+                            <p>📧 <a href="mailto:ashiqurrahman.stat@gmail.com" class="text-blue-600 link-hover">ashiqurrahman.stat@gmail.com</a></p>
                             <p>📱 (+88) 01772215084</p>
                             <p>📍 Mirpur 1, Dhaka, Bangladesh</p>
-                            <p>💼 <a href="https://www.linkedin.com/in/ashiqur-rahman-rony/" target="_blank" class="hover:text-blue-600">LinkedIn</a></p>
-                            <p>💻 <a href="https://github.com/ashikpydev" target="_blank" class="hover:text-blue-600">GitHub</a></p>
+                            <p>💼 <a href="https://linkedin.com/in/ashiqur-rahman-rony" target="_blank" class="text-blue-600 link-hover">LinkedIn</a></p>
+                            <p>💻 <a href="https://github.com/ashikpydev" target="_blank" class="text-blue-600 link-hover">GitHub</a></p>
+                        </div>
+                        <!-- Skills Section -->
+                        <div class="mt-5">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Skills</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-700">Statistical Tools</h4>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="skill-tag bg-blue-100 text-blue-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-blue-200">R</span>
+                                        <span class="skill-tag bg-blue-100 text-blue-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-blue-200">Python</span>
+                                        <span class="skill-tag bg-blue-100 text-blue-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-blue-200">STATA</span>
+                                        <span class="skill-tag bg-blue-100 text-blue-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-blue-200">SPSS</span>
+                                        <span class="skill-tag bg-blue-100 text-blue-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-blue-200">JMP</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-700">Visualization</h4>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="skill-tag bg-green-100 text-green-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-green-200">Power BI</span>
+                                        <span class="skill-tag bg-green-100 text-green-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-green-200">QGIS</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-700">Data Collection Tools</h4>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="skill-tag bg-purple-100 text-purple-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-purple-200">SurveyCTO</span>
+                                        <span class="skill-tag bg-purple-100 text-purple-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-purple-200">KoBoToolbox</span>
+                                        <span class="skill-tag bg-purple-100 text-purple-800 px-1.5 py-1 rounded-full text-xs font-medium hover:bg-purple-200">ODK</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Shadow Separator -->
                 <div class="hidden md:block w-px bg-gray-300 shadow-lg"></div>
-                <!-- Right Side (70%) -->
-                <div class="w-full md:w-[70%] flex flex-col justify-between">
+                <!-- Right Side (65%) -->
+                <div class="w-full md:w-[65%] flex flex-col justify-between">
                     <div>
                         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3 gradient-text text-center md:text-left">Ashiqur Rahman Rony</h1>
-                        <p class="text-lg md:text-xl text-gray-600 mb-4 text-center md:text-left">Data Analyst & Research Specialist</p>
-                        <p class="text-sm md:text-base text-gray-500 max-w-2xl mx-auto md:mx-0 mb-4">
-                            Hi, I'm Ashiqur Rahman Rony from Bangladesh. I completed my undergraduate degree in March 2024 with a CGPA of 3.55/4.00, ranking in the top 6% of my class. After graduation, I joined BRAC James P. Grant School of Public Health as a Research Intern, contributing to the ARISE Project. Currently, I work as a Data Analyst at Development Research Initiative (dRi) since June 2024.
+                        <p class="text-lg md:text-xl text-gray-600 mb-4 text-center md:text-left">Research Data Analyst</p>
+                        <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto md:mx-0 mb-4 bio-text">
+                            I'm Ashiqur Rahman Rony from Bangladesh, with a B.Sc. in Statistics from the University of Dhaka (March 2024, CGPA 3.55/4.00, top 6% of my class). As a Research Intern at <a href="https://bracjpgsph.org" target="_blank" class="text-blue-600 link-hover">BRAC James P. Grant School of Public Health</a>, I contributed to the UKRI-funded <a href="https://bracjpgsph.org/assets/pdf/research/research-impact/Accountability%20and%20Responsiveness%20in%20Informal%20Settlements%20for%20Equity%20(ARISE)_CGSRHR_21.08.16.pdf" target="_blank" class="text-blue-600 link-hover">ARISE Project</a>, analyzing health inequities in Dhaka’s informal settlements using SurveyCTO and KoBoToolbox. Since June 2024, I’ve been a Jr. Officer in Data Analytics at <a href="https://www.dri-int.org" target="_blank" class="text-blue-600 link-hover">Development Research Initiative (dRi)</a>, developing digital survey forms and live dashboards for global institutions like the World Bank and Oxford. My research interests include machine learning, mental health, child malnutrition, and public health challenges.
                         </p>
-                        <p class="text-sm md:text-base text-gray-500 max-w-2xl mx-auto md:mx-0 mb-4">
-                            Besides my professional roles, I actively contribute to the public health sector as an independent researcher. My research interests include machine learning, mental health, child malnutrition, C-section deliveries, child mortality, and other topics related to public health.
-                        </p>
-                        <!-- Skills Section -->
+                        <!-- Exciting News and Events Section -->
                         <div class="mt-4">
-                            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 text-center md:text-left">Skills</h2>
-                            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200">Stata (Advanced)</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200">Python (Pandas, NumPy)</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200">R (Tidyverse, ggplot2)</span>
-                                <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200">SPSS</span>
-                                <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-green-200">Power BI</span>
-                                <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-green-200">Tableau</span>
-                                <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-green-200">Excel (Advanced)</span>
-                                <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-green-200">ggplot2</span>
-                                <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-purple-200">SurveyCTO</span>
-                                <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-purple-200">KoBoToolbox</span>
-                                <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-purple-200">ODK</span>
-                                <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-purple-200">Qualitative Analysis</span>
+                            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 text-center md:text-left">Exciting News and Events!</h2>
+                            <p class="text-sm text-gray-500 mb-3 update-date">Stay updated with my latest achievements</p>
+                            <div class="updates-box">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="update-category mb-1">Software Update</p>
+                                        <p class="text-sm font-medium mb-1">June 2024:</p>
+                                        <p class="text-sm mb-2">Developed two Stata packages: <a href="https://github.com/ashikpydev/recode_rep" target="_blank" class="text-blue-600 link-hover">recode_rep</a> and <a href="https://github.com/ashikpydev/recode_nrep" target="_blank" class="text-blue-600 link-hover">recode_nrep</a>, automating survey data cleaning for multiple-select variables from SurveyCTO, KoBoToolbox, and ODK, increasing efficiency by 25%.</p>
+                                        <p class="update-note">Months of coding paid off for streamlined research!</p>
+                                    </div>
+                                    <div>
+                                        <p class="update-category mb-1">Award</p>
+                                        <p class="text-sm font-medium mb-1">December 2023:</p>
+                                        <p class="text-sm mb-2">Won 1st Place in the Research Proposal Writing Contest at Govt. Titumir College, recognized for innovative study design and academic writing.</p>
+                                        <p class="update-note">A proud moment for my research journey!</p>
+                                    </div>
+                                    <div>
+                                        <p class="update-category mb-1">Leadership</p>
+                                        <p class="text-sm font-medium mb-1">January 2023:</p>
+                                        <p class="text-sm mb-2">Founded the Govt. Titumir College Analytics Club, growing it to over 2,000 members, fostering collaborative learning in data analysis.</p>
+                                        <p class="update-note">Empowering students through analytics!</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -111,7 +142,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="fixed bottom-0 w-full text-center py-2 z-50 border-t border-gray-200 shadow-[0_-2px_4px_rgba(0,0,0,0.1)]">
+    <footer class="fixed bottom-0 w-full text-center py-2 z-50 border-t border-gray-200 shadow-[0_-2px_4px_rgba(0,0,0,0.1)] bg-transparent">
         <p class="text-sm text-gray-600">© Ashiqur Rahman Rony</p>
     </footer>
 

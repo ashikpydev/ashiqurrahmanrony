@@ -1,318 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashiqur Rahman Rony - Projects & Certifications</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects portfolio of Ashiqur Rahman Rony, showcasing public health research, data analysis, and visualization work.">
+  <meta name="author" content="Ashiqur Rahman Rony">
+  <meta property="og:title" content="Projects - Ashiqur Rahman Rony">
+  <meta property="og:description" content="Explore the projects of Ashiqur Rahman Rony, highlighting his work in data analysis, research, and visualization.">
+  <meta property="og:image" content="assets/img/Profile_pic.jpg">
+  <meta property="og:url" content="https://yourwebsite.com/projects.html">
+  <title>Projects - Ashiqur Rahman Rony</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .project-card { background: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #4b6cb7, #8b5cf6); opacity: 0; transition: opacity 0.3s ease; }
+    .project-card:hover::before { opacity: 1; }
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); }
+    .project-card img { border-radius: 0.75rem; height: 200px; object-fit: cover; width: 100%; cursor: pointer; }
+    .modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); display: flex; align-items: center; justify-content: center; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0s linear 0.3s; }
+    .modal.active { opacity: 1; visibility: visible; transition: opacity 0.3s ease; }
+    .modal-content { background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%); max-width: 48rem; width: 90%; border-radius: 1.5rem; padding: 2.5rem; overflow-y: auto; max-height: 90vh; position: relative; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); animation: slideIn 0.3s ease; transform: translateY(20px); }
+    .modal-content.active { transform: translateY(0); }
+    .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.75rem; color: #6b7280; transition: color 0.2s, transform 0.2s; cursor: pointer; background: none; border: none; }
+    .modal-close:hover { color: #1e40af; transform: rotate(90deg); }
+    .modal-section { margin-bottom: 1.75rem; }
+    .modal-section h4 { color: #4b6cb7; font-weight: 600; border-bottom: 2px solid #e0e7ff; padding-bottom: 0.5rem; margin-bottom: 0.5rem; position: relative; }
+    .modal-section h4::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 30%; height: 2px; background: #4b6cb7; transition: width 0.3s ease; }
+    .modal-section h4:hover::after { width: 100%; }
+    .modal-section img { width: 100%; height: auto; max-height: 450px; object-fit: contain; border-radius: 0.75rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); margin-bottom: 1rem; }
+    .modal-section p { font-size: 1.125rem; line-height: 1.75; color: #4b5563; }
+    .modal-links { margin-top: 1.5rem; }
+    .modal-links a { display: inline-block; margin-right: 1rem; padding: 0.5rem 1rem; background: #4b6cb7; color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: background 0.3s ease, transform 0.2s ease; }
+    .modal-links a:hover { background: #1e40af; transform: translateY(-2px); }
+    .modal-links a.github { background: #333; }
+    .modal-links a.github:hover { background: #1a1a1a; }
+    @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @media (max-width: 768px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card img { height: 150px; }
+      .modal-content { padding: 1.5rem; max-width: 90%; }
+      .modal-section img { max-height: 300px; }
+      .modal-links a { display: block; margin-bottom: 0.5rem; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="nav-glass shadow-xl fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold gradient-text">Ashiqur Rahman Rony</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-gray-700 link-hover font-medium">About Me</a>
-                    <a href="research.html" class="nav-link text-gray-700 link-hover font-medium">Research</a>
-                    <a href="teaching.html" class="nav-link text-gray-700 link-hover font-medium">Teaching</a>
-                    <a href="projects.html" class="nav-link text-gray-700 link-hover font-medium">Projects</a>
-                    <a href="leadership.html" class="nav-link text-gray-700 link-hover font-medium">Leadership</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="index.html" class="block py-2 text-gray-600 hover:text-blue-600">About Me</a>
-                <a href="research.html" class="block py-2 text-gray-600 hover:text-blue-600">Research</a>
-                <a href="teaching.html" class="block py-2 text-gray-600 hover:text-blue-600">Teaching</a>
-                <a href="projects.html" class="block py-2 text-gray-600 hover:text-blue-600">Projects</a>
-                <a href="leadership.html" class="block py-2 text-gray-600 hover:text-blue-600">Leadership</a>
-            </div>
+<body class="bg-gradient-to-br from-gray-50 to-indigo-100 min-h-screen font-sans text-gray-800">
+  <!-- Navigation -->
+  <nav class="nav-glass shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center py-6">
+        <div class="text-3xl font-bold gradient-text">Ashiqur Rahman Rony</div>
+        <div class="hidden md:flex space-x-10">
+          <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600 font-semibold text-lg transition-colors">About Me</a>
+          <a href="experience.html" class="nav-link text-gray-700 hover:text-indigo-600 font-semibold text-lg transition-colors">Experience</a>
+          <a href="projects.html" class="nav-link text-indigo-600 font-semibold text-lg">Projects</a>
+          <a href="extracurricular.html" class="nav-link text-gray-700 hover:text-indigo-600 font-semibold text-lg transition-colors">Extracurricular Activities</a>
         </div>
-    </nav>
-
-    <!-- Projects & Certifications Section -->
-    <section id="projects" class="pt-24 pb-20 section-bg-alt">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Projects & Certifications</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600">Showcasing top projects and professional development achievements</p>
-            </div>
-
-            <!-- Top 6 Projects -->
-            <div class="mb-20">
-                <h3 class="text-3xl font-bold text-gray-800 mb-12 text-center">Featured Projects</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="glass-effect rounded-xl shadow-lg overflow-hidden card-hover">
-                        <div class="bg-gradient-to-br from-blue-500 to-purple-600 h-48 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">🏥</div>
-                                <div class="text-lg font-semibold">Health Surveillance</div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">National Health Surveillance System</h4>
-                            <p class="text-gray-600 mb-4 text-sm">Processed 35,000+ variables from 5,000+ household surveys for Bangladesh's national health monitoring system.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Stata</span>
-                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Big Data</span>
-                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Public Health</span>
-                            </div>
-                            <button class="project-btn btn-primary text-white px-4 py-2 rounded-lg text-sm w-full" data-project="health">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="glass-effect rounded-xl shadow-lg overflow-hidden card-hover">
-                        <div class="bg-gradient-to-br from-green-500 to-teal-600 h-48 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">🌍</div>
-                                <div class="text-lg font-semibold">Global Surveys</div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">International Survey Forms</h4>
-                            <p class="text-gray-600 mb-4 text-sm">Developed 100+ digital survey forms for World Bank, Oxford, LSE, Purdue, UPenn, and BRAC research projects.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">SurveyCTO</span>
-                                <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded text-xs">KoboToolbox</span>
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">International</span>
-                            </div>
-                            <button class="project-btn btn-primary text-white px-4 py-2 rounded-lg text-sm w-full" data-project="surveys">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="glass-effect rounded-xl shadow-lg overflow-hidden card-hover">
-                        <div class="bg-gradient-to-br from-orange-500 to-red-600 h-48 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">📊</div>
-                                <div class="text-lg font-semibold">Live Dashboards</div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">Real-time Monitoring Dashboards</h4>
-                            <p class="text-gray-600 mb-4 text-sm">Created 30+ live dashboards with SurveyCTO API integration for real-time data quality monitoring.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Power BI</span>
-                                <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">API Integration</span>
-                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Real-time</span>
-                            </div>
-                            <button class="project-btn btn-primary text-white px-4 py-2 rounded-lg text-sm w-full" data-project="dashboards">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="glass-effect rounded-xl shadow-lg overflow-hidden card-hover">
-                        <div class="bg-gradient-to-br from-purple-500 to-pink-600 h-48 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">🤖</div>
-                                <div class="text-lg font-semibold">AI Transcription</div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">Bangla Audio Transcription App</h4>
-                            <p class="text-gray-600 mb-4 text-sm">AI-powered web app using Gemini 2.5 Pro for transcribing Bangla audio to English reports.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Python Flask</span>
-                                <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">Gemini AI</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">NLP</span>
-                            </div>
-                            <button class="project-btn btn-primary text-white px-4 py-2 rounded-lg text-sm w-full" data-project="transcription">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="glass-effect rounded-xl shadow-lg overflow-hidden card-hover">
-                        <div class="bg-gradient-to-br from-indigo-500 to-blue-600 h-48 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">🧠</div>
-                                <div class="text-lg font-semibold">Mental Health</div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">Mental Health Trends Research</h4>
-                            <p class="text-gray-600 mb-4 text-sm">Longitudinal analysis of mental health trends in Bangladesh using BDHS data (2014-2022).</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">BDHS Data</span>
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Longitudinal</span>
-                                <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded text-xs">Public Health</span>
-                            </div>
-                            <button class="project-btn btn-primary text-white px-4 py-2 rounded-lg text-sm w-full" data-project="mental-health">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="glass-effect rounded-xl shadow-lg overflow-hidden card-hover">
-                        <div class="bg-gradient-to-br from-gray-600 to-gray-800 h-48 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">⚙️</div>
-                                <div class="text-lg font-semibold">Automation</div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">Custom STATA Packages</h4>
-                            <p class="text-gray-600 mb-4 text-sm">Developed automation packages for survey data cleaning, improving efficiency by 25%.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">STATA</span>
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Automation</span>
-                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Efficiency</span>
-                            </div>
-                            <button class="project-btn btn-primary text-white px-4 py-2 rounded-lg text-sm w-full" data-project="stata-packages">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Certifications -->
-            <div>
-                <h3 class="text-3xl font-bold text-gray-800 mb-12 text-center">Professional Certifications</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Certification 1 -->
-                    <div class="glass-effect border-2 border-red-200 rounded-xl p-6 hover:border-red-400 transition duration-300 card-hover">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-2xl">🎓</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-lg">HarvardX</h4>
-                                <p class="text-sm text-gray-600">edX Platform</p>
-                            </div>
-                        </div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Data Science: Probability</h5>
-                        <p class="text-sm text-gray-600 mb-3">PH125.3x - Advanced probability concepts for data science applications</p>
-                        <div class="bg-red-50 px-3 py-1 rounded-full text-xs text-red-800 inline-block">University Level</div>
-                    </div>
-
-                    <!-- Certification 2 -->
-                    <div class="glass-effect border-2 border-blue-200 rounded-xl p-6 hover:border-blue-400 transition duration-300 card-hover">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-2xl">📊</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-lg">Johns Hopkins</h4>
-                                <p class="text-sm text-gray-600">Coursera</p>
-                            </div>
-                        </div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Statistical Inference</h5>
-                        <p class="text-sm text-gray-600 mb-3">Advanced statistical inference methods and hypothesis testing</p>
-                        <div class="bg-blue-50 px-3 py-1 rounded-full text-xs text-blue-800 inline-block">Advanced Level</div>
-                    </div>
-
-                    <!-- Certification 3 -->
-                    <div class="glass-effect border-2 border-green-200 rounded-xl p-6 hover:border-green-400 transition duration-300 card-hover">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-2xl">🔢</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-lg">University of Sydney</h4>
-                                <p class="text-sm text-gray-600">Coursera</p>
-                            </div>
-                        </div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Introduction to Calculus</h5>
-                        <p class="text-sm text-gray-600 mb-3">Mathematical foundations for advanced statistical analysis</p>
-                        <div class="bg-green-50 px-3 py-1 rounded-full text-xs text-green-800 inline-block">Foundation</div>
-                    </div>
-
-                    <!-- Certification 4 -->
-                    <div class="glass-effect border-2 border-purple-200 rounded-xl p-6 hover:border-purple-400 transition duration-300 card-hover">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-2xl">📈</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-lg">IBM</h4>
-                                <p class="text-sm text-gray-600">Coursera</p>
-                            </div>
-                        </div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Data Analysis with R</h5>
-                        <p class="text-sm text-gray-600 mb-3">Comprehensive R programming for data analysis and visualization</p>
-                        <div class="bg-purple-50 px-3 py-1 rounded-full text-xs text-purple-800 inline-block">Intermediate Level</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <h2 id="modal-title" class="text-2xl font-bold text-gray-800 mb-6"></h2>
-            <div id="modal-content" class="text-gray-600"></div>
-        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-indigo-600 transition-colors">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md rounded-xl p-4 mt-2 shadow-lg">
+        <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600 text-lg font-medium transition-colors">About Me</a>
+        <a href="experience.html" class="block py-2 text-gray-700 hover:text-indigo-600 text-lg font-medium transition-colors">Experience</a>
+        <a href="projects.html" class="block py-2 text-indigo-600 font-semibold text-lg">Projects</a>
+        <a href="extracurricular.html" class="block py-2 text-gray-700 hover:text-indigo-600 text-lg font-medium transition-colors">Extracurricular Activities</a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-2xl font-bold gradient-text mb-4">Ashiqur Rahman Rony</h3>
-                    <p class="text-gray-400 mb-4">Data Analyst & Research Specialist passionate about transforming data into actionable insights.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/ashiqur-rahman-rony/" target="_blank" class="text-gray-400 hover:text-blue-400 transition duration-300 transform hover:scale-110">
-                            <span class="text-xl">💼</span>
-                        </a>
-                        <a href="https://github.com/ashikpydev" target="_blank" class="text-gray-400 hover:text-purple-400 transition duration-300 transform hover:scale-110">
-                            <span class="text-xl">💻</span>
-                        </a>
-                        <a href="mailto:ashiqurrahman.stat@gmail.com" class="text-gray-400 hover:text-green-400 transition duration-300 transform hover:scale-110">
-                            <span class="text-xl">📧</span>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition duration-300">About Me</a></li>
-                        <li><a href="research.html" class="hover:text-white transition duration-300">Research Experience</a></li>
-                        <li><a href="teaching.html" class="hover:text-white transition duration-300">Teaching</a></li>
-                        <li><a href="projects.html" class="hover:text-white transition duration-300">Projects</a></li>
-                        <li><a href="leadership.html" class="hover:text-white transition duration-300">Leadership</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-                    <div class="space-y-2 text-gray-400">
-                        <p>📧 ashiqurrahman.stat@gmail.com</p>
-                        <p>📱 (+88) 01772215084</p>
-                        <p>📍 Mirpur 1, Dhaka, Bangladesh</p>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 Ashiqur Rahman Rony. All rights reserved.</p>
-            </div>
+  <!-- Projects Section -->
+  <section class="min-h-screen pt-20 pb-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 text-center gradient-text">Projects</h1>
+      <p class="text-lg text-gray-600 mb-10 text-center max-w-2xl mx-auto">A showcase of my projects in public health research, data analysis, and visualization, reflecting my skills as of September 21, 2025, 01:05 AM +06.</p>
+      
+      <!-- Project Grid -->
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card" onclick="openModal('project1')">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Health Data Dashboard" class="w-full rounded-t-lg">
+          <div class="p-4">
+            <h3 class="font-semibold text-xl text-gray-800">Health Data Dashboard</h3>
+            <p class="text-gray-600 text-sm mt-2">Interactive tool for tracking health metrics.</p>
+          </div>
         </div>
-    </footer>
 
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/projects.js" defer></script>
+        <!-- Project 2 -->
+        <div class="project-card" onclick="openModal('project2')">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Survey Automation Tool" class="w-full rounded-t-lg">
+          <div class="p-4">
+            <h3 class="font-semibold text-xl text-gray-800">Survey Automation Tool</h3>
+            <p class="text-gray-600 text-sm mt-2">Streamlined survey data processing.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" onclick="openModal('project3')">
+          <img src="https://images.unsplash.com/photo-1551836022-b2e1e0a9dae4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Child Nutrition Study" class="w-full rounded-t-lg">
+          <div class="p-4">
+            <h3 class="font-semibold text-xl text-gray-800">Child Nutrition Study</h3>
+            <p class="text-gray-600 text-sm mt-2">Analysis of malnutrition factors.</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" onclick="openModal('project4')">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machine Learning Model" class="w-full rounded-t-lg">
+          <div class="p-4">
+            <h3 class="font-semibold text-xl text-gray-800">Machine Learning Model</h3>
+            <p class="text-gray-600 text-sm mt-2">Predictive analytics for health risks.</p>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" onclick="openModal('project5')">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Geospatial Mapping" class="w-full rounded-t-lg">
+          <div class="p-4">
+            <h3 class="font-semibold text-xl text-gray-800">Geospatial Mapping</h3>
+            <p class="text-gray-600 text-sm mt-2">Mapping health facility access.</p>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" onclick="openModal('project6')">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Predictive Analytics" class="w-full rounded-t-lg">
+          <div class="p-4">
+            <h3 class="font-semibold text-xl text-gray-800">Predictive Analytics Model</h3>
+            <p class="text-gray-600 text-sm mt-2">Forecasting disease outbreaks.</p>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card" onclick="openModal('project7')">
+          <img src="https://images.unsplash.com/photo-1581091223959-7d89a60e4a12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Visualization" class="w-full rounded-t-lg">
+          <div class="p-4">
+            <h3 class="font-semibold text-xl text-gray-800">Advanced Data Visualization</h3>
+            <p class="text-gray-600 text-sm mt-2">Interactive charts for research reports.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="project1" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('project1')">✖</button>
+      <div class="modal-section">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Health Data Dashboard" class="w-full rounded-lg mb-6">
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Health Data Dashboard</h3>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Problem Statement/Purpose</h4>
+        <p class="text-gray-700 mb-3">To address the challenge of real-time health data monitoring in underserved regions, this project aims to provide an accessible visualization tool for health officials to make informed decisions quickly.</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Technology Used</h4>
+        <p class="text-gray-700 mb-3">Power BI, Python, SurveyCTO API, Excel</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Description</h4>
+        <p class="text-gray-700">Developed a dynamic dashboard that integrates survey data with administrative records, enabling instant tracking of key health metrics like vaccination rates, disease prevalence, and hospital bed occupancy. The tool supports filtering by region and time period, with automated alerts for anomalies, and has been adopted by local health departments for weekly reviews.</p>
+      </div>
+      <div class="modal-links">
+        <a href="https://example.com/health-dashboard" target="_blank">Live Demo</a>
+        <a href="https://github.com/ashiqurrahmanrony/health-dashboard" target="_blank" class="github">GitHub Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project2" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('project2')">✖</button>
+      <div class="modal-section">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Survey Automation Tool" class="w-full rounded-lg mb-6">
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Survey Automation Tool</h3>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Problem Statement/Purpose</h4>
+        <p class="text-gray-700 mb-3">To reduce manual effort in processing large survey datasets, this tool aims to automate repetitive cleaning tasks, improving efficiency for research teams.</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Technology Used</h4>
+        <p class="text-gray-700 mb-3">Stata, Python, R</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Description</h4>
+        <p class="text-gray-700">Created custom Stata scripts to automate data recoding, validation, and outlier detection, significantly cutting down processing time for multi-variable surveys. The tool handles multi-select variables, generates quality reports, and includes a Python-based scheduler, improving accuracy by 15% and reducing workload by 30% for a team of 10 analysts.</p>
+      </div>
+      <div class="modal-links">
+        <a href="https://example.com/survey-tool" target="_blank">Live Demo</a>
+        <a href="https://github.com/ashiqurrahmanrony/survey-tool" target="_blank" class="github">GitHub Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project3" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('project3')">✖</button>
+      <div class="modal-section">
+        <img src="https://images.unsplash.com/photo-1551836022-b2e1e0a9dae4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Child Nutrition Study" class="w-full rounded-lg mb-6">
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Child Nutrition Study</h3>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Problem Statement/Purpose</h4>
+        <p class="text-gray-700 mb-3">To identify key factors contributing to child malnutrition in rural areas, aiming to inform targeted interventions and policy recommendations.</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Technology Used</h4>
+        <p class="text-gray-700 mb-3">Stata, R, SurveyCTO, GIS</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Description</h4>
+        <p class="text-gray-700">Conducted a field study analyzing nutritional data from 500 households across 10 rural districts, producing actionable insights for health policy development. Key findings included socioeconomic correlations with stunting rates and dietary patterns, leading to recommendations for local programs and a GIS-based mapping of affected zones.</p>
+      </div>
+      <div class="modal-links">
+        <a href="https://example.com/nutrition-study" target="_blank">Live Demo</a>
+        <a href="https://github.com/ashiqurrahmanrony/nutrition-study" target="_blank" class="github">GitHub Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project4" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('project4')">✖</button>
+      <div class="modal-section">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Machine Learning Model" class="w-full rounded-lg mb-6">
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Machine Learning Model</h3>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Problem Statement/Purpose</h4>
+        <p class="text-gray-700 mb-3">To predict mental health risks early, addressing gaps in proactive healthcare delivery and improving patient outcomes.</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Technology Used</h4>
+        <p class="text-gray-700 mb-3">Python (scikit-learn, TensorFlow), R, Jupyter Notebook</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Description</h4>
+        <p class="text-gray-700">Built a model using survey and clinical data, achieving high accuracy in identifying at-risk individuals for timely intervention. The model incorporates logistic regression and random forests, with cross-validation for robustness, and includes a user-friendly interface for clinicians to input data and receive predictions.</p>
+      </div>
+      <div class="modal-links">
+        <a href="https://example.com/ml-model" target="_blank">Live Demo</a>
+        <a href="https://github.com/ashiqurrahmanrony/ml-model" target="_blank" class="github">GitHub Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project5" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('project5')">✖</button>
+      <div class="modal-section">
+        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Geospatial Mapping" class="w-full rounded-lg mb-6">
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Geospatial Mapping</h3>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Problem Statement/Purpose</h4>
+        <p class="text-gray-700 mb-3">To map health facility access gaps, aiming to improve resource allocation in remote areas and enhance healthcare delivery.</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Technology Used</h4>
+        <p class="text-gray-700 mb-3">QGIS, Python, ArcGIS</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Description</h4>
+        <p class="text-gray-700">Developed heatmaps using GPS and survey data to highlight underserved regions, aiding local government planning. The analysis covered 1,000+ locations, identifying priority areas for mobile clinics, and included a dynamic layer for real-time updates based on population density.</p>
+      </div>
+      <div class="modal-links">
+        <a href="https://example.com/geospatial-map" target="_blank">Live Demo</a>
+        <a href="https://github.com/ashiqurrahmanrony/geospatial-map" target="_blank" class="github">GitHub Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project6" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('project6')">✖</button>
+      <div class="modal-section">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Predictive Analytics" class="w-full rounded-lg mb-6">
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Predictive Analytics Model</h3>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Problem Statement/Purpose</h4>
+        <p class="text-gray-700 mb-3">To forecast disease outbreaks in urban slums, enabling preventive measures and resource pre-positioning.</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Technology Used</h4>
+        <p class="text-gray-700 mb-3">R, ARIMA, Python, Prophet</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Description</h4>
+        <p class="text-gray-700">Implemented time series forecasting using ARIMA and Prophet models on historical health data, achieving 85% accuracy in predicting seasonal outbreaks for resource allocation. The model integrates weather and mobility data, providing a 2-week forecast window for public health planning.</p>
+      </div>
+      <div class="modal-links">
+        <a href="https://example.com/predictive-model" target="_blank">Live Demo</a>
+        <a href="https://github.com/ashiqurrahmanrony/predictive-model" target="_blank" class="github">GitHub Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project7" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('project7')">✖</button>
+      <div class="modal-section">
+        <img src="https://images.unsplash.com/photo-1581091223959-7d89a60e4a12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Data Visualization" class="w-full rounded-lg mb-6">
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Advanced Data Visualization</h3>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Problem Statement/Purpose</h4>
+        <p class="text-gray-700 mb-3">To create engaging visualizations for research reports, making complex data accessible to stakeholders and policymakers.</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Technology Used</h4>
+        <p class="text-gray-700 mb-3">ggplot2, Tableau, D3.js</p>
+      </div>
+      <div class="modal-section">
+        <h4 class="text-lg font-medium text-indigo-600 mb-2">Description</h4>
+        <p class="text-gray-700">Designed interactive charts and infographics for 10+ reports, using ggplot2, Tableau, and D3.js to highlight trends in public health data. The visualizations include drill-down capabilities and animations, improving report engagement by 40% and aiding decision-making processes.</p>
+      </div>
+      <div class="modal-links">
+        <a href="https://example.com/data-viz" target="_blank">Live Demo</a>
+        <a href="https://github.com/ashiqurrahmanrony/data-viz" target="_blank" class="github">GitHub Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fixed bottom-0 w-full text-center py-2 z-50 border-t border-gray-200 shadow-[0_-2px_4px_rgba(0,0,0,0.1)] bg-transparent">
+    <p class="text-sm text-gray-600">© Ashiqur Rahman Rony</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      const modalContent = modal.querySelector('.modal-content');
+      modal.classList.add("active");
+      modalContent.classList.add("active");
+    }
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      const modalContent = modal.querySelector('.modal-content');
+      modal.classList.remove("active");
+      modalContent.classList.remove("active");
+    }
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
