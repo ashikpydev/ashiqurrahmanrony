@@ -9,6 +9,7 @@
   <meta property="og:description" content="Explore the extracurricular activities of Ashiqur Rahman Rony, highlighting his leadership and contributions to the data analytics community.">
   <meta property="og:image" content="assets/img/Profile_pic.jpg">
   <meta property="og:url" content="https://yourwebsite.com/extracurricular.html">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>Extracurricular Activities - Ashiqur Rahman Rony</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/style.css">
@@ -31,18 +32,22 @@
     .modal-section h4:hover::after { width: 100%; }
     .modal-section img { width: 100%; height: auto; max-height: 450px; object-fit: contain; border-radius: 0.75rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); margin-bottom: 1rem; }
     .modal-section p { font-size: 1.125rem; line-height: 1.75; color: #4b5563; }
+    .modal-links { margin-top: 1.5rem; }
+    .modal-links a { display: inline-block; margin-right: 1rem; padding: 0.5rem 1rem; background: #4b6cb7; color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: background 0.3s ease, transform 0.2s ease; }
+    .modal-links a:hover { background: #1e40af; transform: translateY(-2px); }
     @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     @media (max-width: 768px) {
       .activity-grid { grid-template-columns: 1fr; }
       .activity-card img { height: 150px; }
       .modal-content { padding: 1.5rem; max-width: 90%; }
       .modal-section img { max-height: 300px; }
+      .modal-links a { display: block; margin-bottom: 0.5rem; }
     }
   </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-indigo-100 min-h-screen font-sans text-gray-800">
   <!-- Navigation -->
-  <nav class="nav-glass shadow-lg fixed w-full top-0 z-50">
+  <nav class="nav-glass shadow-lg fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex justify-between items-center py-6">
         <div class="text-3xl font-bold gradient-text">Ashiqur Rahman Rony</div>
@@ -52,7 +57,7 @@
           <a href="projects.html" class="nav-link text-gray-700 hover:text-indigo-600 font-semibold text-lg transition-colors">Projects</a>
           <a href="extracurricular.html" class="nav-link text-indigo-600 font-semibold text-lg">Extracurricular Activities</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-indigo-600 transition-colors">
+        <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-indigo-600 transition-colors" aria-label="Toggle mobile menu">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -68,7 +73,7 @@
   </nav>
 
   <!-- Extracurricular Activities Section -->
-  <section class="min-h-screen pt-20 pb-12">
+  <section class="min-h-screen pt-20 pb-12 fade-in">
     <div class="max-w-7xl mx-auto px-6">
       <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 text-center gradient-text">Extracurricular Activities</h1>
       <p class="text-lg text-gray-600 mb-10 text-center max-w-2xl mx-auto">A showcase of my leadership, awards, and community involvement in data analytics and research, reflecting my contributions as of September 21, 2025.</p>
@@ -108,7 +113,7 @@
   <!-- Modals -->
   <div id="activity1" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('activity1')">✖</button>
+      <button class="modal-close" onclick="closeModal('activity1')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2b6b14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Analytics Club" class="w-full rounded-lg mb-6">
       </div>
@@ -126,7 +131,7 @@
 
   <div id="activity2" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('activity2')">✖</button>
+      <button class="modal-close" onclick="closeModal('activity2')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Research Proposal Award" class="w-full rounded-lg mb-6">
       </div>
@@ -144,7 +149,7 @@
 
   <div id="activity3" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('activity3')">✖</button>
+      <button class="modal-close" onclick="closeModal('activity3')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1516321310762-479d72a03d51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="StatQuery YouTube Channel" class="w-full rounded-lg mb-6">
       </div>
@@ -157,6 +162,9 @@
         <h4 class="text-lg font-medium text-indigo-600 mb-2">Impact</h4>
         <p class="text-gray-700">Reached over 1,000 viewers, simplifying complex statistical topics and providing practical tutorials, which enhanced students’ understanding and application of data analysis in academic and professional settings.</p>
       </div>
+      <div class="modal-links">
+        <a href="https://www.youtube.com/@StatQuery" target="_blank">Visit YouTube Channel</a>
+      </div>
     </div>
   </div>
 
@@ -165,24 +173,6 @@
     <p class="text-sm text-gray-600">© Ashiqur Rahman Rony</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>
-  <script>
-    function openModal(id) {
-      const modal = document.getElementById(id);
-      const modalContent = modal.querySelector('.modal-content');
-      modal.classList.add("active");
-      modalContent.classList.add("active");
-    }
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      const modalContent = modal.querySelector('.modal-content');
-      modal.classList.remove("active");
-      modalContent.classList.remove("active");
-    }
-    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('active');
-    });
-  </script>
 </body>
 </html>

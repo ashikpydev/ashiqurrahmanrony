@@ -9,6 +9,7 @@
   <meta property="og:description" content="Explore the projects of Ashiqur Rahman Rony, highlighting his work in data analysis, research, and visualization.">
   <meta property="og:image" content="assets/img/Profile_pic.jpg">
   <meta property="og:url" content="https://yourwebsite.com/projects.html">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>Projects - Ashiqur Rahman Rony</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/style.css">
@@ -48,7 +49,7 @@
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-indigo-100 min-h-screen font-sans text-gray-800">
   <!-- Navigation -->
-  <nav class="nav-glass shadow-lg fixed w-full top-0 z-50">
+  <nav class="nav-glass shadow-lg fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex justify-between items-center py-6">
         <div class="text-3xl font-bold gradient-text">Ashiqur Rahman Rony</div>
@@ -58,7 +59,7 @@
           <a href="projects.html" class="nav-link text-indigo-600 font-semibold text-lg">Projects</a>
           <a href="extracurricular.html" class="nav-link text-gray-700 hover:text-indigo-600 font-semibold text-lg transition-colors">Extracurricular Activities</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-indigo-600 transition-colors">
+        <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-indigo-600 transition-colors" aria-label="Toggle mobile menu">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -74,10 +75,10 @@
   </nav>
 
   <!-- Projects Section -->
-  <section class="min-h-screen pt-20 pb-12">
+  <section class="min-h-screen pt-20 pb-12 fade-in">
     <div class="max-w-7xl mx-auto px-6">
       <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 text-center gradient-text">Projects</h1>
-      <p class="text-lg text-gray-600 mb-10 text-center max-w-2xl mx-auto">A showcase of my projects in public health research, data analysis, and visualization, reflecting my skills as of September 21, 2025, 01:05 AM +06.</p>
+      <p class="text-lg text-gray-600 mb-10 text-center max-w-2xl mx-auto">A showcase of my projects in public health research, data analysis, and visualization, reflecting my skills as of September 21, 2025, 01:27 AM +06.</p>
       
       <!-- Project Grid -->
       <div class="project-grid">
@@ -150,7 +151,7 @@
   <!-- Modals -->
   <div id="project1" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('project1')">✖</button>
+      <button class="modal-close" onclick="closeModal('project1')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Health Data Dashboard" class="w-full rounded-lg mb-6">
       </div>
@@ -168,15 +169,14 @@
         <p class="text-gray-700">Developed a dynamic dashboard that integrates survey data with administrative records, enabling instant tracking of key health metrics like vaccination rates, disease prevalence, and hospital bed occupancy. The tool supports filtering by region and time period, with automated alerts for anomalies, and has been adopted by local health departments for weekly reviews.</p>
       </div>
       <div class="modal-links">
-        <a href="https://example.com/health-dashboard" target="_blank">Live Demo</a>
-        <a href="https://github.com/ashiqurrahmanrony/health-dashboard" target="_blank" class="github">GitHub Repo</a>
+        <a href="https://github.com/ashikpydev/health-dashboard" target="_blank" class="github">GitHub Repo</a>
       </div>
     </div>
   </div>
 
   <div id="project2" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('project2')">✖</button>
+      <button class="modal-close" onclick="closeModal('project2')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Survey Automation Tool" class="w-full rounded-lg mb-6">
       </div>
@@ -194,15 +194,14 @@
         <p class="text-gray-700">Created custom Stata scripts to automate data recoding, validation, and outlier detection, significantly cutting down processing time for multi-variable surveys. The tool handles multi-select variables, generates quality reports, and includes a Python-based scheduler, improving accuracy by 15% and reducing workload by 30% for a team of 10 analysts.</p>
       </div>
       <div class="modal-links">
-        <a href="https://example.com/survey-tool" target="_blank">Live Demo</a>
-        <a href="https://github.com/ashiqurrahmanrony/survey-tool" target="_blank" class="github">GitHub Repo</a>
+        <a href="https://github.com/ashikpydev/survey-tool" target="_blank" class="github">GitHub Repo</a>
       </div>
     </div>
   </div>
 
   <div id="project3" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('project3')">✖</button>
+      <button class="modal-close" onclick="closeModal('project3')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1551836022-b2e1e0a9dae4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Child Nutrition Study" class="w-full rounded-lg mb-6">
       </div>
@@ -220,15 +219,14 @@
         <p class="text-gray-700">Conducted a field study analyzing nutritional data from 500 households across 10 rural districts, producing actionable insights for health policy development. Key findings included socioeconomic correlations with stunting rates and dietary patterns, leading to recommendations for local programs and a GIS-based mapping of affected zones.</p>
       </div>
       <div class="modal-links">
-        <a href="https://example.com/nutrition-study" target="_blank">Live Demo</a>
-        <a href="https://github.com/ashiqurrahmanrony/nutrition-study" target="_blank" class="github">GitHub Repo</a>
+        <a href="https://github.com/ashikpydev/nutrition-study" target="_blank" class="github">GitHub Repo</a>
       </div>
     </div>
   </div>
 
   <div id="project4" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('project4')">✖</button>
+      <button class="modal-close" onclick="closeModal('project4')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Machine Learning Model" class="w-full rounded-lg mb-6">
       </div>
@@ -246,15 +244,14 @@
         <p class="text-gray-700">Built a model using survey and clinical data, achieving high accuracy in identifying at-risk individuals for timely intervention. The model incorporates logistic regression and random forests, with cross-validation for robustness, and includes a user-friendly interface for clinicians to input data and receive predictions.</p>
       </div>
       <div class="modal-links">
-        <a href="https://example.com/ml-model" target="_blank">Live Demo</a>
-        <a href="https://github.com/ashiqurrahmanrony/ml-model" target="_blank" class="github">GitHub Repo</a>
+        <a href="https://github.com/ashikpydev/ml-model" target="_blank" class="github">GitHub Repo</a>
       </div>
     </div>
   </div>
 
   <div id="project5" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('project5')">✖</button>
+      <button class="modal-close" onclick="closeModal('project5')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Geospatial Mapping" class="w-full rounded-lg mb-6">
       </div>
@@ -272,15 +269,14 @@
         <p class="text-gray-700">Developed heatmaps using GPS and survey data to highlight underserved regions, aiding local government planning. The analysis covered 1,000+ locations, identifying priority areas for mobile clinics, and included a dynamic layer for real-time updates based on population density.</p>
       </div>
       <div class="modal-links">
-        <a href="https://example.com/geospatial-map" target="_blank">Live Demo</a>
-        <a href="https://github.com/ashiqurrahmanrony/geospatial-map" target="_blank" class="github">GitHub Repo</a>
+        <a href="https://github.com/ashikpydev/geospatial-map" target="_blank" class="github">GitHub Repo</a>
       </div>
     </div>
   </div>
 
   <div id="project6" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('project6')">✖</button>
+      <button class="modal-close" onclick="closeModal('project6')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Predictive Analytics" class="w-full rounded-lg mb-6">
       </div>
@@ -298,15 +294,14 @@
         <p class="text-gray-700">Implemented time series forecasting using ARIMA and Prophet models on historical health data, achieving 85% accuracy in predicting seasonal outbreaks for resource allocation. The model integrates weather and mobility data, providing a 2-week forecast window for public health planning.</p>
       </div>
       <div class="modal-links">
-        <a href="https://example.com/predictive-model" target="_blank">Live Demo</a>
-        <a href="https://github.com/ashiqurrahmanrony/predictive-model" target="_blank" class="github">GitHub Repo</a>
+        <a href="https://github.com/ashikpydev/predictive-model" target="_blank" class="github">GitHub Repo</a>
       </div>
     </div>
   </div>
 
   <div id="project7" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('project7')">✖</button>
+      <button class="modal-close" onclick="closeModal('project7')" aria-label="Close modal">✖</button>
       <div class="modal-section">
         <img src="https://images.unsplash.com/photo-1581091223959-7d89a60e4a12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Data Visualization" class="w-full rounded-lg mb-6">
       </div>
@@ -324,8 +319,7 @@
         <p class="text-gray-700">Designed interactive charts and infographics for 10+ reports, using ggplot2, Tableau, and D3.js to highlight trends in public health data. The visualizations include drill-down capabilities and animations, improving report engagement by 40% and aiding decision-making processes.</p>
       </div>
       <div class="modal-links">
-        <a href="https://example.com/data-viz" target="_blank">Live Demo</a>
-        <a href="https://github.com/ashiqurrahmanrony/data-viz" target="_blank" class="github">GitHub Repo</a>
+        <a href="https://github.com/ashikpydev/data-viz" target="_blank" class="github">GitHub Repo</a>
       </div>
     </div>
   </div>
@@ -335,24 +329,6 @@
     <p class="text-sm text-gray-600">© Ashiqur Rahman Rony</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>
-  <script>
-    function openModal(id) {
-      const modal = document.getElementById(id);
-      const modalContent = modal.querySelector('.modal-content');
-      modal.classList.add("active");
-      modalContent.classList.add("active");
-    }
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      const modalContent = modal.querySelector('.modal-content');
-      modal.classList.remove("active");
-      modalContent.classList.remove("active");
-    }
-    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('active');
-    });
-  </script>
 </body>
 </html>

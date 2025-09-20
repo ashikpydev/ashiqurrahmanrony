@@ -10,13 +10,14 @@
     <meta property="og:description" content="Explore the portfolio of Ashiqur Rahman Rony, a Research Data Analyst with expertise in public health and data analysis.">
     <meta property="og:image" content="assets/img/Profile_pic.jpg">
     <meta property="og:url" content="https://yourwebsite.com">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <title>Ashiqur Rahman Rony - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="nav-glass shadow-xl fixed w-full top-0 z-50">
+    <nav class="nav-glass shadow-xl fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="text-xl font-bold gradient-text">Ashiqur Rahman Rony</div>
@@ -26,7 +27,7 @@
                     <a href="projects.html" class="nav-link text-gray-700 link-hover font-medium text-base">Projects</a>
                     <a href="extracurricular.html" class="nav-link text-gray-700 link-hover font-medium text-base">Extracurricular Activities</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600" aria-label="Toggle mobile menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -42,7 +43,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center bg-gray-50 pt-20 pb-6">
+    <section class="min-h-screen flex items-center bg-gray-50 pt-20 pb-6 fade-in">
         <div class="max-w-7xl mx-auto px-4 w-full">
             <div class="flex flex-col md:flex-row items-stretch gap-6">
                 <!-- Left Side (35%) -->
@@ -51,10 +52,10 @@
                         <div class="flex justify-center">
                             <img src="assets/img/Profile_pic.jpg" alt="Ashiqur Rahman Rony" class="w-40 h-40 rounded-lg shadow-lg border-4 border-blue-200 profile-img">
                         </div>
-                        <p class="text-base text-gray-600 font-medium">Research Data Analyst | Public Health Enthusiast</p>
+                        <p class="text-base text-gray-600 font-medium flex justify-center">Ashiqur Rahman Rony</p>
                         <div class="flex justify-center">
-                            <a href="assets/files/Ashiqur_Rahman_Rony_CV.pdf" download>
-                                <button id="downloadCV" class="btn-primary max-w-xs">Download CV</button>
+                            <a href="assets/docs/Ashiqur_Rahman_Rony_CV.pdf" target="_blank">
+                                <button id="downloadCV" class="btn-primary max-w-xs">Resume</button>
                             </a>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-800">Contact Info</h3>
