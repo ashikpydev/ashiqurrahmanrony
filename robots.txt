@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ashikpydev.github.io/ashiqurrahmanrony/sitemap.xml
