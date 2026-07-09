@@ -35,6 +35,8 @@ then open http://localhost:5500
 ## Deploy
 The site is served by GitHub Pages from the `main` branch (root folder). Pushing to `main` updates the live site within a minute.
 
+GitHub Pages caches `style.css` and `main.js` for 10 minutes, and browsers can hold onto them even longer. Both files are loaded with a `?v=YYYYMMDD` query string in `index.html`; **bump that date whenever you change either file** so visitors (and you) always get the new version instead of a cached one. If a change ever looks like it "did not take," a hard refresh (Ctrl+Shift+R, or Cmd+Shift+R on Mac) confirms whether it is a caching issue before assuming the deploy failed.
+
 ## CV
 The CV is the PDF at `assets/docs/Ashiqur_Rahman_Rony_CV.pdf`. The "Curriculum Vitae" link in the header opens it in a new tab. To update it, replace that PDF file.
 
