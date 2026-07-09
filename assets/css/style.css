@@ -121,7 +121,8 @@ section { padding: 3.2rem 0; border-top: 1px solid var(--border); }
 .intro { display: grid; grid-template-columns: 210px 1fr; gap: 2.4rem; align-items: start; }
 .intro-photo { width: 210px; position: sticky; top: 92px; }
 .intro-photo img {
-  width: 100%; border-radius: 14px; display: block;
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: 14px; display: block;
   box-shadow: var(--shadow); border: 1px solid var(--border);
 }
 .intro-photo .cap { font-size: .82rem; color: var(--faint); margin-top: .6rem; line-height: 1.5; }
@@ -218,6 +219,9 @@ a.pub-tag:hover { color: var(--accent); border-color: var(--accent); text-decora
   font-size: .96rem; color: var(--muted); line-height: 1.72;
 }
 .abstract-inner .lbl { font-weight: 600; color: var(--text); font-style: normal; }
+.abstract-inner p { margin: 0 0 .85rem; }
+.abstract-inner p:last-of-type { margin-bottom: 0; }
+.abstract-source { display: block; margin-top: .9rem; font-size: .78rem; color: var(--faint); }
 
 /* ---------- Research software ---------- */
 .soft-card {
